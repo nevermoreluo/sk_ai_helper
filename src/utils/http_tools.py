@@ -39,7 +39,7 @@ class SkHttpClient:
         self.session = requests.Session()
         self.host = host
     
-    def _get(self, url: str, json_data: dict|None = None, **kwargs) -> requests.Response:
+    def _get(self, url: str, **kwargs) -> requests.Response:
         """
         Send an HTTP GET request to the specified URL.
 
@@ -55,13 +55,13 @@ class SkHttpClient:
         :return: The HTTP response.
         """
         url = requests.compat.urljoin(self.host, url)
-        resp = self.session.get(url, json=json_data, **kwargs)
+        resp = self.session.get(url, **kwargs)
         if resp.status_code >= 400:
-            logger.error(f"Request {url}, {json_data},\
+            logger.error(f"Request {url}, \
                           failed with status code {resp.status_code}, resp: {resp.content}")
         return resp
     
-    def get(self, url: str, json_data = None, **kwargs) -> SkHttpResponse:
+    def get(self, url: str, **kwargs) -> SkHttpResponse:
         """
         Send an HTTP GET request to the specified URL.
 
@@ -79,7 +79,7 @@ class SkHttpClient:
         resp =  self._get(url, json=json_data,  **kwargs)
         return SkHttpResponse(resp.status_code, resp.content)
 
-    def get_json(self, url, json_data = None, **kwargs) -> SkHttpResponse:
+    def get_json(self, url, **kwargs) -> SkHttpResponse:
         """
         Send an HTTP GET request to the specified URL and return a JSON response.
 
@@ -94,7 +94,7 @@ class SkHttpClient:
             requests.Session.get method.
         :return: An SkHttpResponse object containing the status code, content, and JSON data.
         """
-        resp =  self._get(url, json=json_data,  **kwargs)
+        resp =  self._get(url, **kwargs)
         return SkHttpResponse(resp.status_code, resp.content, resp.json())
 
     def _post(self, url: str, json: dict|None=None, **kwargs) -> requests.Response:

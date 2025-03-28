@@ -19,15 +19,36 @@ class OpenWebUIHelper:
         self.open_webui_host: str = open_webui_host
         self.open_webui_token: str = open_webui_token
         self.client: SkHttpClient = SkHttpClient(open_webui_host)
+        self.headers = {"Authorization": f"Bearer {open_webui_token}", "Content-Type": "application/json"}
+        self.knowledge_cache = []
     
     def add_knowledge(self, knowledge: str) -> None:
         pass
 
-    def get_knowledge(self) -> str:
+    def update_knowledge(self, knownledge: str) -> None:
         pass
 
+
+    def get_knowledge(self) -> str:
+        """
+        获取知识库列表
+        """
+        uri = "/api/v1/knowledge/"
+        self.knowledge_cache = self.client.get_json(uri, headers=self.headers).json
+        return self.knowledge_cache
+
     def query_with_knowledge(self, query: str, model: str) -> str:
-        pass
+        """
+        匹配所有知识库id也可以选择指定id的知识库查询
+        """
+        uri = "/api/chat/completions"
+        data = {
+            "model": model,
+            "messages": [{"role": "user", "content": query}],
+            "files": [{'type': 'collection', 'id': k.get("id")} for k in self.get_knowledge() if k.get("id")]
+        }
+        resp = self.client.post_json(uri, json=data, headers=self.headers)
+        return resp.json
 
     def query(self, query: str, model: str) -> str:
         pass
@@ -42,13 +63,17 @@ def main():
     ollama_host: str = config.get_str("ollama", "host", "http://192.168.13.207:11434")
     ollama_model: str = config.get_str("ollama", "model", "deepseek-r1:14b")
 
-    open_webui_host: str = config.get_str("open_webui", "host", "http://192.168.13.207:3000")
-    open_webui_token: str = config.get_str("open_webio", "token", "")
+    open_webui_host: str = config.get_str("open_webui", "host", "http://192.168.13.207:8080")
+    open_webui_token: str = config.get_str("open_webio", "token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1MDhhOTUzLWM5YjUtNDEzMC1iZmE0LTdiNjQzMmEwMmRkZiJ9.178U963OzrC7nKeiy7I08uvHjwguBJXQF2FMirrUdeI")
 
     question: str = "hello world"
-    resp: str = query_ollama(ollama_host, question, ollama_model)
-    logger.info(f" query_ollama resp: {resp}")
+    # resp: str = query_ollama(ollama_host, question, ollama_model)
+    # logger.info(f" query_ollama resp: {resp}")
+    open_webui_helper = OpenWebUIHelper(open_webui_host, open_webui_token)
+    resp = open_webui_helper.query_with_knowledge("李浩然", "deepseek-r1:14b")
+    logger.info(resp)
 
+    # logger.info(f"knowledge: {open_webui_helper.get_knowledge()}")
 
 
 
