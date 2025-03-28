@@ -1,0 +1,144 @@
+{
+  "stream": true,
+  "model": "deepseek-r1:14b",
+  "messages": [
+    { "role": "user", "content": "李浩然" },
+    {
+      "role": "assistant",
+      "content": "\n李浩然是一位从小在偏远山区长大的年轻人，家境贫寒但学业成绩优异。他通过自己的努力考上了城里的大学，并选择了计算机科学专业。毕业后，他在一家知名科技公司工作，并逐渐成为技术团队的核心成员。近年来，他还积极参与开源项目，希望为国内技术创新做出贡献 [0]。\n\n如果需要更多信息，请告诉我！"
+    },
+    { "role": "user", "content": "孙俊杰" }
+  ],
+  "params": {},
+  "features": {
+    "image_generation": false,
+    "code_interpreter": false,
+    "web_search": false
+  },
+  "variables": {
+    "{{USER_NAME}}": "陈乐伦",
+    "{{USER_LOCATION}}": "Unknown",
+    "{{CURRENT_DATETIME}}": "2025-03-28 16:26:53",
+    "{{CURRENT_DATE}}": "2025-03-28",
+    "{{CURRENT_TIME}}": "16:26:53",
+    "{{CURRENT_WEEKDAY}}": "Friday",
+    "{{CURRENT_TIMEZONE}}": "Asia/Shanghai",
+    "{{USER_LANGUAGE}}": "zh-CN"
+  },
+  "model_item": {
+    "id": "deepseek-r1:14b",
+    "name": "deepseek-r1:14b",
+    "object": "model",
+    "created": 1743150408,
+    "owned_by": "ollama",
+    "ollama": {
+      "name": "deepseek-r1:14b",
+      "model": "deepseek-r1:14b",
+      "modified_at": "2025-02-26T20:53:43.601657591-05:00",
+      "size": 8988112040,
+      "digest": "ea35dfe18182f635ee2b214ea30b7520fe1ada68da018f8b395b444b662d4f1a",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": ["qwen2"],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "urls": [0]
+    },
+    "info": {
+      "id": "deepseek-r1:14b",
+      "user_id": "cd2fc252-8c14-4f24-9105-b0684fec1e83",
+      "base_model_id": null,
+      "name": "deepseek-r1:14b",
+      "params": {},
+      "meta": {
+        "profile_image_url": "/static/favicon.png",
+        "description": null,
+        "capabilities": { "vision": true, "citations": true },
+        "suggestion_prompts": null,
+        "tags": [],
+        "knowledge": [
+          {
+            "id": "3a1b5795-ddf7-41d1-b0de-85f014a6d393",
+            "user_id": "cd2fc252-8c14-4f24-9105-b0684fec1e83",
+            "name": "java学习",
+            "description": "1",
+            "data": {
+              "file_ids": [
+                "76d1acc5-3508-4069-9490-b55c9d353e03",
+                "2c303777-1c95-4632-94a1-f7ba3f229c90",
+                "de6b615e-6c72-4a48-a719-71f41c093c5f"
+              ]
+            },
+            "meta": null,
+            "access_control": {
+              "read": { "group_ids": [], "user_ids": [] },
+              "write": { "group_ids": [], "user_ids": [] }
+            },
+            "created_at": 1740619098,
+            "updated_at": 1740620189,
+            "user": {
+              "id": "cd2fc252-8c14-4f24-9105-b0684fec1e83",
+              "name": "root",
+              "email": "root@root.com",
+              "role": "admin",
+              "profile_image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAABLNJREFUeF7tml+IVHUUx7/33tmZ2d3QUBS0xQeT7L/Qug+FRltE9dYf7MmoVHzpwXpQfJCCerF6cYMgSCioiIqIgrCodgtLqGRDETJ1Sws3YtuMVZs7M/fOjXuNGd2IPbNz53Tmzneezz3nzOdzz+93fzPXObt3UQR+zBBwKMSMi6QRCrHlg0KM+aAQCrFGwFg/3EMoxBgBY+1wQijEGAFj7XBCKMQYAWPtcEIoxBgBY+1wQijEGAFj7XBCKMQYAWPtcEIoxBgBY+1wQijEGAFj7XBCKMQYAWPtcEIoxBgBY+1wQijEGAFj7XBCKMQYAWPtcEIoxBgBY+2YnZDCuhH0rN44P1xRCAQlRP7vCKePIDjxNoJTH84vl/JV2RQyG2IUIDz9Ofz9TyD6a1IZcXPlukNIwiRCOPkFSp8+DFTPNUdJMbpjhIS/fY3q0VfnROPk+uAtHYS7ZBDuwlWA4zWuiUJUj7+J8v5tc+b5vwI6R0h8d++7vylOPVdtRH5wJ5y+ZfXronO/oDS6BbWpg03l0grOtJAYYs+1W1EY2gXk+i8wrVVQOTSCyvhuLcZN1cm8kJhG372jcBevqYMJfnwP/tiWpkBpBXeFkOLwXuRW3ldnmmzuTS5/FDLrHNIKRApJ4XaafTBsRQiXLENC/rWphz4q3z2PyqE9KXSZfopM7yG5FfegcMtzcPqXNx57ZyZQ+uQh1P78IX2aKWTMnBBv2Xq4i69HbsVd8JYOAV6xgSmejsMvoDL+bAro2pOiY4S0/PVrFVSPv4Xyl4+3nKqdCbpASIRo5mSyZ1SPvd5OlqnkzqaQsIzIn0Y4NY7g5AcIJt5NBZZGko4R8l8/Lrr9y+EN3A5vyWBjv4hC1KYPo/zNUwh//UqDY2o1OkfIHKfr5Inq5t1wLhtoPFH5Uyh/+wyCY2+kBqzdiTIjJAblDdyB4ro9lz7mnp9E+cAOBD/vazfLVPJnSkhMpOeaR1FY+ySQX1AHVDtzFP7oJrNnj4tNZk5I/OWKt76I3KoNF/05FSE8PYbSRxtSuYvbmSSTQtzLV6M4/DLcRdd11KEwbjaTQpKl6+pHUBiKl66FjU3+7CmUxraa/bcw00KSpeu2l5Bb+QDguP9IiRD89D780c3tXHVayp3ZCYmpxEtX752vwVlwZQNSZQblg0+j+v0rLYFr18WZFhJDy9+4DfmbtgNeb+Op648jKH22CdHMRLu4zjtv5oXEZHrvfgfeFcPxlnkBlOHXgbpCSHJgXD9yyetAKJ+Bf2A74hceLH26QkiydK3dhfwNjwFuvs4//n2s9PGDpt5kNCvE0l2r2QuFaNIW1KIQASTNEArRpC2oRSECSJohFKJJW1CLQgSQNEMoRJO2oBaFCCBphlCIJm1BLQoRQNIMoRBN2oJaFCKApBlCIZq0BbUoRABJM4RCNGkLalGIAJJmCIVo0hbUohABJM0QCtGkLahFIQJImiEUoklbUItCBJA0QyhEk7agFoUIIGmGUIgmbUEtChFA0gyhEE3agloUIoCkGUIhmrQFtShEAEkzhEI0aQtqUYgAkmYIhWjSFtSiEAEkzRAK0aQtqEUhAkiaIRSiSVtQi0IEkDRD/gYwJY0D3hyGiwAAAABJRU5ErkJggg=="
+            },
+            "files": [
+              {
+                "id": "de6b615e-6c72-4a48-a719-71f41c093c5f",
+                "meta": {
+                  "name": "生活经历.txt",
+                  "content_type": "text/plain",
+                  "size": 2556,
+                  "data": {},
+                  "collection_name": "3a1b5795-ddf7-41d1-b0de-85f014a6d393"
+                },
+                "created_at": 1740620188,
+                "updated_at": 1740620188
+              },
+              {
+                "id": "2c303777-1c95-4632-94a1-f7ba3f229c90",
+                "meta": {
+                  "name": "1.txt",
+                  "content_type": "text/plain",
+                  "size": 30,
+                  "data": {},
+                  "collection_name": "3a1b5795-ddf7-41d1-b0de-85f014a6d393"
+                },
+                "created_at": 1740619650,
+                "updated_at": 1740619650
+              },
+              {
+                "id": "76d1acc5-3508-4069-9490-b55c9d353e03",
+                "meta": {
+                  "name": "Untitled.txt",
+                  "content_type": "text/plain",
+                  "size": 76,
+                  "data": {},
+                  "collection_name": "3a1b5795-ddf7-41d1-b0de-85f014a6d393"
+                },
+                "created_at": 1740619143,
+                "updated_at": 1740619143
+              }
+            ],
+            "type": "collection"
+          }
+        ]
+      },
+      "access_control": {
+        "read": { "group_ids": [], "user_ids": [] },
+        "write": { "group_ids": [], "user_ids": [] }
+      },
+      "is_active": true,
+      "updated_at": 1740621360,
+      "created_at": 1740621360
+    },
+    "actions": []
+  },
+  "session_id": "PgPqfqSgbOyNNsChAABr",
+  "chat_id": "32247067-7d37-4771-95a2-289ef2b213f1",
+  "id": "a3821d58-13ba-4f57-815d-266645bd26b3"
+}
