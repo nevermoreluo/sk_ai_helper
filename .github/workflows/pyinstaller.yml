@@ -32,7 +32,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.lock
-          pip install pyinstaller
+
 
       - name: Build with PyInstaller
         # 使用 PyInstaller 打包项目
@@ -41,7 +41,7 @@ jobs:
 
       - name: Upload artifact
         # 上传打包后的文件作为工件，方便下载
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           # 根据操作系统命名工件
           name: sk_ai_helper-${{ matrix.os }}
