@@ -10,13 +10,29 @@
 #   universal: false
 
 -e file:.
+altgraph==0.17.4
+    # via pyinstaller
 certifi==2025.1.31
     # via requests
 charset-normalizer==3.4.1
     # via requests
 idna==3.10
     # via requests
+packaging==24.2
+    # via pyinstaller
+    # via pyinstaller-hooks-contrib
+pefile==2023.2.7
+    # via pyinstaller
+pyinstaller==6.12.0
+    # via sk-ai-helper
+pyinstaller-hooks-contrib==2025.2
+    # via pyinstaller
+pywin32-ctypes==0.2.3
+    # via pyinstaller
 requests==2.32.3
     # via sk-ai-helper
+setuptools==78.1.0
+    # via pyinstaller
+    # via pyinstaller-hooks-contrib
 urllib3==2.3.0
     # via requests
